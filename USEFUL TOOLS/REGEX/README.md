@@ -74,6 +74,7 @@ for match in matches:
     print("-" * 40)
 ```
 
+```
 Coincidencia completa: ID123a
 Número después de 'ID': a
 Posición de la coincidencia: (3, 9)
@@ -86,7 +87,7 @@ Coincidencia completa: ID789c
 Número después de 'ID': c
 Posición de la coincidencia: (49, 55)
 ----------------------------------------
-
+```
 
 ## re.sub(pattern, string)
 
