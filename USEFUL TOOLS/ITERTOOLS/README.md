@@ -100,3 +100,34 @@ from itertools import starmap
 list(starmap(pow, [(2, 5), (3, 2)]))
 # [32, 9]
 ```
+
+## itertools.chain(n_iterables)
+Combina diferentes conjuntos de iteradores (tuplas, listas, generadores) en uno solo.
+
+```
+import itertools
+
+# A tuple and a list
+tuple1 = (10, 20)
+list2 = [30, 40]
+
+# Using itertools.chain to combine them
+combined = itertools.chain(tuple1, list2)
+
+# Convert to a list and print
+print(list(combined)) # Output: [10, 20, 30, 40]
+```
+
+```
+import itertools
+
+# Two generators
+gen1 = (x for x in range(3))  # generator: (0, 1, 2)
+gen2 = (x for x in range(3, 6))  # generator: (3, 4, 5)
+
+# Using itertools.chain to combine the generators
+combined = itertools.chain(gen1, gen2)
+
+# Convert to a list and print
+print(list(combined))  # Output: [0, 1, 2, 3, 4, 5]
+```
