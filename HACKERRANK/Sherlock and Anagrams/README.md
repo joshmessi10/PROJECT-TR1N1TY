@@ -1,5 +1,5 @@
-Sherlock and Anagrams
+# Sherlock and Anagrams
 
-Using Itertools.Combinations
+## Using Itertools.Combinations()
 
 https://www.hackerrank.com/challenges/sherlock-and-anagrams/problem?isFullScreen=true
