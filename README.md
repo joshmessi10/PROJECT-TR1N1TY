@@ -1,2 +1,3 @@
 # Preparation for Programming Marathon
-¿Me ayudan a mejorar el título y el readme? :3 Estoy cansado, jefes.
+
+For Printing + Downloading before Competition -> Let's append the maximum number of exercises possible ;)
