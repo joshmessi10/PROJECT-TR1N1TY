@@ -14,18 +14,29 @@ from itertools import combinations
 #
 
 def alternate(s):
-    if len(s) == 1:
+    if len(s) == 1 or len(set(s)) == 1:
         return 0
     else:
         comb = list(combinations(set(s),2))
-        a = ["" for i in range(len(comb))]  
-        for i in s:
+        array = ["" for i in range(len(comb))]  
+        for letter in s:
             j=0
             for element in comb:
-                if i in list(element):
-                    a[j] = a[j] + i
+                if letter in list(element) :
+                    array[j] = array[j] + letter
                 j += 1
-    print(a)
+    length = [1 for x in range(len(array))]
+    for x in range(len(array)):
+        for y in range(len(array[x])-1):
+            if array[x][y] != array[x][y+1]:
+                length[x] +=1
+            else:
+                length[x] = 0
+                break
+    return max(length)
+        
+        
+    return max([len(x)-1 for x in array])
     
             
             
