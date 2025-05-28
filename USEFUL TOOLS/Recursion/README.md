@@ -85,3 +85,70 @@ def fib(n):
 
 Complejidad: O(n)
 
+# ¿Qué es Backtracking?
+
+**Backtracking** es una técnica de programación que explora todas las posibles soluciones de un problema **paso a paso**, **descartando rápidamente aquellas que no cumplen con los requisitos**.
+
+> **Idea clave:** Construye soluciones parciales e “intenta y retrocede” cuando una opción no lleva a una solución válida.
+
+
+## 🔧 Estructura general
+
+```
+def backtrack(opciones, estado_actual):
+    if estado_actual es solución:
+        guardar solución
+        return
+    for opción in opciones:
+        hacer elección
+        backtrack(nuevas opciones, nuevo estado)
+        deshacer elección  # volver atrás
+```
+
+## Ejemplos Clásicos
+
+### Subconjuntos
+
+```
+def subsets(nums):
+    result = []
+    def backtrack(index, path):
+        result.append(path[:])
+        for i in range(index, len(nums)):
+            path.append(nums[i])
+            backtrack(i + 1, path)
+            path.pop()  # retroceder
+    backtrack(0, [])
+    return result
+```
+
+### N-Reinas
+
+```
+def solveNQueens(n):
+    res = []
+    board = [["."] * n for _ in range(n)]
+    
+    def is_valid(row, col):
+        for i in range(row):
+            if board[i][col] == "Q":
+                return False
+            if col - (row - i) >= 0 and board[i][col - (row - i)] == "Q":
+                return False
+            if col + (row - i) < n and board[i][col + (row - i)] == "Q":
+                return False
+        return True
+
+    def backtrack(row):
+        if row == n:
+            res.append(["".join(r) for r in board])
+            return
+        for col in range(n):
+            if is_valid(row, col):
+                board[row][col] = "Q"
+                backtrack(row + 1)
+                board[row][col] = "."  # deshacer
+
+    backtrack(0)
+    return res
+```
