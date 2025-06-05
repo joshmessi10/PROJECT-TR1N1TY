@@ -1,3 +1,3 @@
 # Preparation for Programming Marathon
 
-For Printing + Downloading before Competition -> Let's append the maximum number of exercises possible ;)
+Solving Exercises from Hackerrank and Leetcode + Learning Different New Techniques
